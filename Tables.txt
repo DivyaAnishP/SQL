@@ -1,0 +1,100 @@
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table comments
+--
+
+CREATE TABLE comments (
+  ID  int(11) NOT NULL,
+   comment_author  varchar(256) NOT NULL,
+   comment_author_email  varchar(256) NOT NULL,
+   comment_content  longtext NOT NULL
+);
+
+--
+-- Dumping data for table  comments 
+--
+
+INSERT INTO  comments  ( ID ,  comment_author ,  comment_author_email ,  comment_content ) VALUES
+(1, 'jessica', 'jessica@gmail.com', 'Great post! '),
+(2, 'mike', 'mike@gmail.com', 'Love it! Write more like this. '),
+(3, 'jamie', 'jamie@gmail.com', 'I disagree! '),
+(4, 'caleb', 'caleb@gmail.com', 'First');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table  comments 
+--
+ALTER TABLE  comments 
+  ADD PRIMARY KEY ( ID );
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table  comments 
+--
+ALTER TABLE  comments 
+  MODIFY  ID  int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+===============================================
+
+CREATE DATABASE databasename;
+
+BACKUP DATABASE databasename
+TO DISK = 'filepath';
+
+CREATE TABLE Persons (
+    	Personid int NOT NULL AUTO_INCREMENT,
+    	LastName varchar(255) NOT NULL,
+    	FirstName varchar(255) NOT NULL,
+	City varchar(255) DEFAULT 'Sandnes'
+    	Age int,
+ 	PRIMARY KEY (Personid ),
+     	CHECK (Age>=18)
+);
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+ALTER TABLE table_name
+ADD column_name datatype;
+
+
+CREATE INDEX idx_lastname
+ON Persons (LastName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
