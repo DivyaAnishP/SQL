@@ -1,0 +1,25 @@
+SQL Server comes with the following data types for storing a date or a date/time value in the database:
+
+DATE - format YYYY-MM-DD
+DATETIME - format: YYYY-MM-DD HH:MI:SS
+SMALLDATETIME - format: YYYY-MM-DD HH:MI:SS
+TIMESTAMP - format: a unique number
+
+SELECT NOW();
+Output: 2017-01-13 08:03:52
+
+SELECT CURDATE();
+Output: 2017-01-13
+
+SELECT CURTIME();
+Output: 08:05:15
+
+SELECT Name, DATE(BirthTime) AS BirthDate FROM Test;
+EXTRACT(unit FROM date);
+
+
+
+Function : DATE_ADD(date, INTERVAL expr type);
+SELECT Name, DATE_ADD(SchoolStartDate, INTERVAL 1 YEAR) AS BirthTimeModified FROM Test;
+
+---To add the time from SchoolStartDate field
